@@ -1,0 +1,39 @@
+MIN_SENHA = 6
+MAX_SENHA = 12
+MAX_N_DIGIT = 9
+
+senha = input('Digite aqui a sua senha:')
+
+if(len(senha) < MIN_SENHA):
+    print('Sua senha é muito pequena')
+elif(len(senha) > MAX_SENHA):
+    print('Sua senha é muito grande')
+
+elif(not ('S' in senha or '#' in senha or '@' in senha)):
+    print('Sua senha está invalida, utilize pelo menos um: {$#@}')
+else:
+    temMaisc = False
+    for caractere in senha:
+        if(ord(caractere) in range(ord('A'), ORD('Z')+1)):
+            temMaisc = True
+
+        if(temMaisc == False):
+         print('Não tem nenhuma letra MAIUSCULA')
+
+else:
+    temNumero = False
+        for caractere in senha:
+        if(ord(caractere) in range(ord('0'), ord('9')+1)):
+                temNumero = True
+        if(temNumero == False):
+        print('Sua senha nao tem nenhum digito')
+else:
+    temMinusc = False
+        for caractere in senha:
+        if(ord(caractere) in range(ord('a'), ord('z')+1)):
+                     tem minusc = True
+        if(temMinusc == False):
+        print('Não tem nenhuma letra MINUSCULA')
+    else:
+        print('PARABENS SUA SENHA É EXCELENTE!')
+
