@@ -19,7 +19,19 @@
 # substituindo apenas o comando print(questão...) existente.
 ##
 def main():
-    print("questao 4")
+   n = int(input('Digite uma dia'))
+   n1 = int(input('Digite um mes'))
+   n2 = int(input('digite um ano'))
+   print('O sucessor da data {}-{}-{} é {}-{}-{}'.format (n, n1, n2, (n <= 28), (n1 + 1), (n2 + 1)))
+
+
+  if n2 % 400:
+    if n1 == 2:
+           print('O sucessor é {}-{}-{}'.format (n, n1, n2, (n), (n1), (n2 % 400)))
+    else:
+            print('O sucessor é {}-{}-{}'.format((n % 2), (n1 + 2), (n2 + 1)))
+  else:
+    print('O sucessor é {}-{}-{}'.format((n % 2), (n1 + 2), (n2 + 1)))
 
 
     
