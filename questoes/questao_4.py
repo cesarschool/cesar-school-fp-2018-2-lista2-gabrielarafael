@@ -19,20 +19,35 @@
 # substituindo apenas o comando print(questão...) existente.
 ##
 def main():
-   n = int(input('Digite uma dia'))
-   n1 = int(input('Digite um mes'))
-   n2 = int(input('digite um ano'))
-   print('O sucessor da data {}-{}-{} é {}-{}-{}'.format (n, n1, n2, (n <= 28), (n1 + 1), (n2 + 1)))
+    ano = int(input("Ano: "))
+    mes = int(input("Mes: "))
+    dia = int(input("Dia: "))
+    bissexto = False
+    if ano % 4 == 0:
+        if ano % 100:
+            bissexto = True
+        else:
+            if ano % 400 == 0:
+                bissexto = True
+    if dia >= 28:
+        if mes == 2:
+            if dia == 28 and not bissexto:
+                dia = 0
+                mes = 3
+        else:
+            if dia == 30:
+                if mes == 4 or mes == 6 or mes == 9 or mes == 11:
+                    mes += 1
+                    dia = 0
+            elif dia == 31:
+                dia = 0
+                if mes == 12:
+                    mes = 1
+                    ano += 1
+                else:
+                    mes += 1
 
-
-  if n2 % 400:
-    if n1 == 2:
-           print('O sucessor é {}-{}-{}'.format (n, n1, n2, (n), (n1), (n2 % 400)))
-    else:
-            print('O sucessor é {}-{}-{}'.format((n % 2), (n1 + 2), (n2 + 1)))
-  else:
-    print('O sucessor é {}-{}-{}'.format((n % 2), (n1 + 2), (n2 + 1)))
-
+    print("{:0>4}-{:0>2}-{:0>2}".format(ano,mes,dia+1))
 
     
 if __name__ == '__main__':
