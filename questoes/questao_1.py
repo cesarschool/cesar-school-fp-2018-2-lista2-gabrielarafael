@@ -30,8 +30,7 @@
 
 from string import ascii_lowercase, ascii_uppercase, digits
 chars_especiais = "$#@"
-def main1():
-    #print("questao 1")
+def main():
     senhas = input("Digite as senhas a serem verificadas:\n")
     i = 0
     senhas_aceitas=''
